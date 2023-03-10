@@ -1,6 +1,5 @@
-import { ZodError } from 'zod';
-
 import { isObject } from '../../utils/index.ts';
+import { ZodError } from '../../schemas/index.ts';
 import { InternalError } from './internal-error.ts';
 import { ErrorDetails, ResponseObject } from './error.types.ts';
 import { PublicNonRecoverableError } from './public-non-recoverable-error.ts';

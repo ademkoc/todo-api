@@ -1,5 +1,5 @@
-import { ZodSchema } from 'zod';
-import type { RouterMiddleware } from 'oak';
+import { ZodSchema } from '../schemas/index.ts';
+import { RouterMiddleware } from '../infrastructure/index.ts';
 
 export type RequestValidation<TParams, TQuery, TBody> = {
     params?: ZodSchema<TParams>;

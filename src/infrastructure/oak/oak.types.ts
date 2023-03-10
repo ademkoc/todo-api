@@ -1,5 +1,5 @@
 import { type Application } from 'oak';
-export { type Context, type RouterContext } from 'oak';
+export { type Context, type RouterContext, type RouterMiddleware } from 'oak';
 
 import { Container, ScopeContainer } from '../ioc/index.ts';
 
