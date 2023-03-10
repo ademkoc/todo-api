@@ -1,4 +1,4 @@
-import { NewTodo, UpdateTodo } from '../../../schemas/todo.ts';
+import { NewTodo, UpdateTodo } from '../../../schemas/index.ts';
 import { EntityNotFoundError, HttpResponse, ICradle } from '../../../infrastructure/index.ts';
 import type { TodoRepository } from '../repositories/todo.repository.ts';
 

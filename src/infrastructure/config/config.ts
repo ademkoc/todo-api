@@ -1,4 +1,4 @@
-import { Config } from './config.schema.ts';
+import { Config } from '../../schemas/index.ts';
 
 export function getConfig() {
     const parseResult = Config.safeParse(Deno.env.toObject());

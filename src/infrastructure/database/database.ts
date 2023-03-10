@@ -3,7 +3,7 @@ import { Kysely, PostgresAdapter, PostgresIntrospector, PostgresQueryCompiler } 
 
 import { Database } from './database.type.ts';
 import { PostgresDriver } from './lib/postgres-driver.ts';
-import { Config } from '../config/config.schema.ts';
+import { Config } from '../../schemas/index.ts';
 
 export class DbContextFactory {
     static init(config: Config) {

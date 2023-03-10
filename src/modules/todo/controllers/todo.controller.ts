@@ -1,4 +1,4 @@
-import { NewTodo, UpdateTodo } from '../../../schemas/todo.ts';
+import { NewTodo, UpdateTodo } from '../../../schemas/index.ts';
 import type { ContextState, RouterContext } from '../../../infrastructure/index.ts';
 
 export const index = async (
