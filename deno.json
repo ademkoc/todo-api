@@ -1,6 +1,7 @@
 {
   "tasks": {
     "dev": "deno run --watch --allow-env --allow-read --allow-net ./src/server.ts",
+    "migration": "deno run --allow-env --allow-read --allow-net ./src/migrate-to-latest.ts",
     "esm:add": "deno run -A https://esm.sh/v111 add",
     "esm:update": "deno run -A https://esm.sh/v111 update",
     "esm:remove": "deno run -A https://esm.sh/v111 remove"
@@ -8,8 +9,9 @@
   "fmt": {
     "files": {
       "include": [
+        "db/",
         "src/",
-        "/specs",
+        "specs/",
         "setup-tests.ts"
       ]
     },
