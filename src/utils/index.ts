@@ -1,2 +1,2 @@
 export * from './types.ts';
-export * from './is-object.ts';
+export * from './object-utils.ts';
