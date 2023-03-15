@@ -1,4 +1,4 @@
-import { asClass, asValue, createContainer } from 'awilix';
+import { asClass, asFunction, asValue, createContainer } from 'awilix';
 
 import { getConfig } from '../config/index.ts';
 import { Container, ICradle } from './ioc.types.ts';
@@ -14,7 +14,14 @@ export function buildContainer(): Container {
         // App Module
         config: asValue(config),
         logger: asClass(Logger).singleton(),
-        db: asValue(DbContextFactory.init(config)),
+        db: asFunction(() => {
+            return DbContextFactory.init(config);
+        }, {
+            lifetime: 'SINGLETON',
+            dispose: (db) => {
+                return db.destroy();
+            },
+        }),
 
         // Todo Module
         todoRepository: asClass(TodoRepository),

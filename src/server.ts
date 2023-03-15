@@ -29,8 +29,8 @@ async function startServer() {
     } finally {
         // and you can do something after the close to shutdown
 
-        // Release db connection
-        await container.cradle.db.destroy();
+        // Dispose container
+        await container.dispose();
 
         console.log('Bye!', Date.now());
 
