@@ -1,6 +1,6 @@
 import type { AwilixContainer } from 'awilix';
 
-import type { Config } from '../config/index.ts';
+import type { Config } from '../../schemas/config.schema.ts';
 import type { TodoService } from '../../modules/todo/services/todo.service.ts';
 import type { TodoRepository } from '../../modules/todo/repositories/todo.repository.ts';
 import type { Logger } from '../logger/logger.ts';
