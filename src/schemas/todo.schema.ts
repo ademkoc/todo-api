@@ -6,8 +6,7 @@ export const Todo = z.object({
     description: z.string().describe('Todo entry description'),
     is_completed: z.boolean().default(false).describe('Is todo entry complated?'),
     created_at: z.date().describe('Todo entry creation date'),
-    updated_at: z.date().optional().describe('Todo entry last update date'),
-    deleted_at: z.date().optional().describe('Todo entry deletion date'),
+    updated_at: z.date().describe('Todo entry last update date'),
 });
 
 export const NewTodo = z.object({

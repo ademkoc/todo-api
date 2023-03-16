@@ -10,8 +10,7 @@ interface Todo {
     is_completed: boolean;
 
     created_at: ColumnType<Date, string | undefined, never>;
-    updated_at: ColumnType<Date, string | undefined>;
-    deleted_at: ColumnType<Date, string | undefined>;
+    updated_at: ColumnType<Date, string | undefined, Date | string>;
 }
 
 export interface Database {

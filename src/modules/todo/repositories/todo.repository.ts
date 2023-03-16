@@ -21,7 +21,7 @@ export class TodoRepository {
     public async findTodoByTitle(title: string): Promise<Either<'NOT_FOUND', Todo>> {
         const todo = await this.db
             .selectFrom('todos')
-            .select(['id', 'title', 'description', 'is_completed', 'created_at', 'updated_at'])
+            .selectAll()
             .where('title', '=', title)
             .executeTakeFirst();
 
@@ -35,7 +35,7 @@ export class TodoRepository {
     public async findTodoById(id: number): Promise<Either<'NOT_FOUND', Todo>> {
         const todo = await this.db
             .selectFrom('todos')
-            .select(['id', 'title', 'description', 'is_completed', 'created_at', 'updated_at'])
+            .selectAll()
             .where('id', '=', id)
             .executeTakeFirst();
 
@@ -70,6 +70,7 @@ export class TodoRepository {
                 updated_at: new Date(),
             })
             .where('id', '=', id)
+            .returningAll()
             .executeTakeFirst();
 
         return { result };

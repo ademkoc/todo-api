@@ -9,7 +9,6 @@ export async function up(db: Kysely<any>): Promise<void> {
         .addColumn('is_completed', 'boolean', (col) => col.notNull().defaultTo(false))
         .addColumn('created_at', 'timestamp', (col) => col.defaultTo(sql`now()`).notNull())
         .addColumn('updated_at', 'timestamp', (col) => col.defaultTo(sql`now()`).notNull())
-        .addColumn('deleted_at', 'timestamp')
         .execute();
 }
 
