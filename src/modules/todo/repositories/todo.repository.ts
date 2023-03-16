@@ -67,7 +67,7 @@ export class TodoRepository {
                 title: payload.title,
                 description: payload.description,
                 is_completed: payload.is_completed,
-                updated_at: new Date(),
+                updated_at: new Date().toISOString(),
             })
             .where('id', '=', id)
             .returningAll()
