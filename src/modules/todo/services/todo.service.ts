@@ -31,7 +31,7 @@ export class TodoService {
         if (findTodoResult.error) {
             const createTodoResult = await this.todoRepository.createTodo(todo);
 
-            return HttpResponse.success(createTodoResult.result, 201);
+            return HttpResponse.success(createTodoResult, 201);
         }
 
         return HttpResponse.success(findTodoResult.result);

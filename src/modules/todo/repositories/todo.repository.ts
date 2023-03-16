@@ -47,7 +47,7 @@ export class TodoRepository {
     }
 
     public async createTodo(todo: NewTodo) {
-        const result = await this.db
+        const createdTodo = await this.db
             .insertInto('todos')
             .values({
                 title: todo.title,
@@ -55,9 +55,9 @@ export class TodoRepository {
                 is_completed: false,
             })
             .returningAll()
-            .executeTakeFirst();
+            .executeTakeFirstOrThrow();
 
-        return { result };
+        return createdTodo;
     }
 
     public async updateTodoById(id: number, payload: UpdateTodo) {
@@ -73,7 +73,7 @@ export class TodoRepository {
             .returningAll()
             .executeTakeFirst();
 
-        return { result };
+        return result;
     }
 
     public async deleteTodoById(id: number) {
@@ -83,6 +83,6 @@ export class TodoRepository {
             .returning(['id'])
             .executeTakeFirst();
 
-        return { result };
+        return result;
     }
 }
