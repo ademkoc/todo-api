@@ -80,7 +80,7 @@ export class TodoRepository {
         const result = await this.db
             .deleteFrom('todos')
             .where('id', '=', id)
-            .returningAll()
+            .returning(['id'])
             .executeTakeFirst();
 
         return { result };
