@@ -7,14 +7,6 @@ export const AppConfig = z.object({
 });
 
 export const DatabaseConfig = z.object({
-    // don't change this env names
-    // because they are defined by postgres package
-    PGDATABASE: z.string(),
-    PGHOST: z.string(),
-    PGUSER: z.string(),
-    PGPASSWORD: z.string(),
-    PGPORT: z.coerce.number(),
-    // env variables that i named
     DB_URL: z.string().optional(),
     POOLSIZE: z.coerce.number(),
     LAZYPOOL: z.coerce.boolean().default(false),
@@ -32,11 +24,6 @@ export const Config = AppConfig.merge(DatabaseConfig).transform((
         bindAddress: input.BIND_ADDRESS,
     },
     db: {
-        name: input.PGDATABASE,
-        host: input.PGHOST,
-        user: input.PGUSER,
-        password: input.PGPASSWORD,
-        port: input.PGPORT,
         url: input.DB_URL,
         poolSize: input.POOLSIZE,
         lazyPool: input.LAZYPOOL,
