@@ -5,6 +5,8 @@
     "postgres": "https://deno.land/x/postgres@v0.17.0/mod.ts",
     "rhum": "https://deno.land/x/rhum@v2.2.0/mod.ts",
     "zod": "https://deno.land/x/zod@v3.21.2/mod.ts",
+    "@anatine/zod-mock": "https://esm.sh/v111/*@anatine/zod-mock@3.10.0",
+    "@faker-js/faker": "https://esm.sh/v111/@faker-js/faker@7.6.0",
     "awilix": "https://esm.sh/v111/*awilix@8.0.0",
     "chai": "https://esm.sh/v111/*chai@4.3.7",
     "kysely": "https://esm.sh/v111/kysely@0.23.5"
@@ -19,6 +21,7 @@
       "get-func-name": "https://esm.sh/v111/get-func-name@2.0.0",
       "loupe": "https://esm.sh/v111/loupe@2.3.6",
       "pathval": "https://esm.sh/v111/pathval@1.1.1",
+      "randexp": "https://esm.sh/v111/randexp@0.5.3",
       "type-detect": "https://esm.sh/v111/type-detect@4.0.8"
     }
   }
