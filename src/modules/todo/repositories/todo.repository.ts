@@ -1,5 +1,5 @@
 import { Either } from '../../../utils/index.ts';
-import type { NewTodo, Todo, UpdateTodo } from '../../../schemas/index.ts';
+import type { NewTodoDTO, Todo, UpdateTodoDTO } from '../../../schemas/index.ts';
 import { ICradle, type KyselyService } from '../../../infrastructure/index.ts';
 
 export class TodoRepository {
@@ -46,7 +46,7 @@ export class TodoRepository {
         return { result: todo };
     }
 
-    public async createTodo(todo: NewTodo) {
+    public async createTodo(todo: NewTodoDTO) {
         const createdTodo = await this.db
             .insertInto('todos')
             .values({
@@ -60,7 +60,7 @@ export class TodoRepository {
         return createdTodo;
     }
 
-    public async updateTodoById(id: number, payload: UpdateTodo) {
+    public async updateTodoById(id: number, payload: UpdateTodoDTO) {
         const result = await this.db
             .updateTable('todos')
             .set({

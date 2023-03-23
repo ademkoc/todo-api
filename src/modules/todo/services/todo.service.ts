@@ -1,5 +1,5 @@
-import { NewTodo, UpdateTodo } from '../../../schemas/index.ts';
 import { EntityNotFoundError, HttpResponse, ICradle } from '../../../infrastructure/index.ts';
+import type { NewTodoDTO, UpdateTodoDTO } from '../../../schemas/index.ts';
 import type { TodoRepository } from '../repositories/todo.repository.ts';
 
 export class TodoService {
@@ -25,7 +25,7 @@ export class TodoService {
         return HttpResponse.success(getTodoResult.result);
     }
 
-    public async findOrCreateTodo(todo: NewTodo) {
+    public async findOrCreateTodo(todo: NewTodoDTO) {
         const findTodoResult = await this.todoRepository.findTodoByTitle(todo.title);
 
         if (findTodoResult.error) {
@@ -37,7 +37,7 @@ export class TodoService {
         return HttpResponse.success(findTodoResult.result);
     }
 
-    public async updateTodoById(id: number, payload: UpdateTodo) {
+    public async updateTodoById(id: number, payload: UpdateTodoDTO) {
         await this.todoRepository.updateTodoById(id, payload);
 
         return HttpResponse.success(null, 204);
