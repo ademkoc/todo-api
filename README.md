@@ -15,7 +15,6 @@ To enter the Denoland I decided make this project. Simple todo app. And I wanted
 * awilix: IoC container
 * kysely: SQL query builder
 * zod: schema validation and static type inference
-* rhum: testing
 
 ### Missing Features
 

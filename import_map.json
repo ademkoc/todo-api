@@ -3,7 +3,6 @@
     "std/": "https://deno.land/std@0.178.0/",
     "oak": "https://deno.land/x/oak@v12.0.1/mod.ts",
     "postgres": "https://deno.land/x/postgres@v0.17.0/mod.ts",
-    "rhum": "https://deno.land/x/rhum@v2.2.0/mod.ts",
     "zod": "https://deno.land/x/zod@v3.21.2/mod.ts",
     "@anatine/zod-mock": "https://esm.sh/v111/*@anatine/zod-mock@3.10.0",
     "@faker-js/faker": "https://esm.sh/v111/@faker-js/faker@7.6.0",
